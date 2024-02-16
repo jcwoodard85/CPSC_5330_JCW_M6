@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     var currencyLogic = CurrencyLogic()
     
     @IBOutlet weak var usdTextfield: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func convertButton(_ sender: UIButton) {
-        currencyLogic.setUSD(usdTextfield.text!)
-        self.performSegue(withIdentifier: "toResults", sender: self)
+        if (Int(usdTextfield.text!) == nil) {
+            errorLabel.text = "Please use Int values only."
+        }
+        else {
+            errorLabel.text = ""
+            currencyLogic.setUSD(usdTextfield.text!)
+            self.performSegue(withIdentifier: "toResults", sender: self)
+        }
     }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     

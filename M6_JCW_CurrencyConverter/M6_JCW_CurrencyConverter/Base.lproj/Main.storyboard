@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-Jt-287">
-                                <rect key="frame" x="30" y="503" width="315" height="279"/>
+                                <rect key="frame" x="30" y="438" width="315" height="344"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="l55-hH-xMj">
                                         <rect key="frame" x="52.333333333333329" y="0.0" width="210.33333333333337" height="34"/>
@@ -113,8 +114,14 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svc-uH-7rY">
+                                        <rect key="frame" x="132.66666666666666" y="233" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" systemColor="systemYellowColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAR-cb-FnZ">
-                                        <rect key="frame" x="104.66666666666666" y="233" width="106" height="46"/>
+                                        <rect key="frame" x="104.66666666666666" y="298" width="106" height="46"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Convert">
@@ -138,6 +145,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="svc-uH-7rY" id="8iv-ye-iL8"/>
                         <outlet property="usdTextfield" destination="Dij-PH-32u" id="8Vz-mU-yEx"/>
                         <segue destination="VeP-Hg-WNd" kind="presentation" identifier="toResults" id="pPr-7C-akt"/>
                     </connections>
@@ -275,4 +283,9 @@
             <point key="canvasLocation" x="668" y="4"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
